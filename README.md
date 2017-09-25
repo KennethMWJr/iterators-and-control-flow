@@ -30,8 +30,6 @@ competencies: Programming
 
 If statements are an extremely common way to manage application logic -- what happens when, etc.
 
-![flowchart](./assets/if-else-flowchart.jpg)
-
 ```js
 if (/* whatever's in here is true */) {
   // this code runs
@@ -54,21 +52,26 @@ if (1 > 0) {
 
 When you need to test more than one case, you may use `else if`:
 
-```javascript
-var favoritePet = 'dog';
+![flowchart](./assets/if-else-flowchart.jpg)
 
-if (favoritePet === 'cat') {
-  console.log('Achoo!!! Im allergic to cats.');
-} else if (favoritePet === 'dog') {
-  console.log('Yeah!! Dogs are the best.');
+```javascript
+var favoritePet = 'cat';
+
+if (favoritePet === 'dog') {
+  console.log('Achoo!!! Im allergic to dogs.');
+} else if (favoritePet === 'cat') {
+  console.log('Yeah!! Cats are the best.');
 } else {
   console.log(`Please don't tell me you own a ferret`);
 }
 
-//=> Yeah!! Dogs are the best.
+//=> Yeah!! Cats are the best.
 ```
 
-#### You Do
+### 🚀 Independent Practice!!
+
+Touch a new javascript file -- `lecture-practice.js` -- and work in that. Remember, you can use the Node repl to run the file: `node lecture-practice.js`.
+
 Let's see if you have enough money to buy a cat.
 
 If `yourMoney` is equal to `price`, log the message "You have just enough to buy a cat!"
@@ -76,13 +79,14 @@ If `yourMoney` is more than `price`, log the message "You can buy a cat and will
 If `yourMoney` is less than `price`, log the message "You cannot buy a cat.  You need <X> more dollars :("
 
 ```javascript
+// Put these lines into your `lecture-practice.js` file.
+
   var yourMoney = 50;
   var catPrice = 100;
 
   // YOUR CODE HERE
 ```
 Play with the numbers above to make sure your code works!
-
 
 
 ### Ternary Operator
@@ -128,7 +132,7 @@ In this case the `switch` statement compares `food` to each of the cases (`pear`
 
 The default clause is optional.
 
-#### You Do
+### 🚀 Independent Practice!!
 
 Use a `switch` statement to inform us if some number `n` is prime.
 * If it's 1, log the message '1 is actually not prime!'
@@ -269,9 +273,13 @@ for (var i = 0; i < people.length; i++) {
 
 We can implement something similar to a `for` loop with a `while` loop.
 
-#### You Do
+### 🚀 Independent Practice!!
 
 Let's expand our `switch` statement from above that checks for primes.  Instead of just seeing the output for one number, let's use a loop to get the output for every number from 1 to 12.
+
+## 🚀 LAB TIME!!
+
+Fork and clone [this repo](https://git.generalassemb.ly/wdi-nyc-thundercats/LAB_U01_D04_Iterators-Control-Flow) and follow the instructions!
 
 
 
@@ -280,4 +288,3 @@ Let's expand our `switch` statement from above that checks for primes.  Instead 
 - What can we use `for` and `while` loops to accomplish?
 - How do we choose between using a `for` or a `while` loop?
 
-**[Lab here](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U01_D04_Iterators-and-Control-Flow)**
