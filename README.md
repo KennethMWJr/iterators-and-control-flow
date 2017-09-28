@@ -24,9 +24,9 @@ competencies: Programming
 - Be comfortable with objects and getting values
 - Understand the concepts of truthy/falsy
 
-## Conditional Statements
+# Conditional Statements
 
-### if...else statement
+## if...else statement
 
 If statements are an extremely common way to manage application logic -- what happens when, etc.
 
@@ -55,7 +55,7 @@ When you need to test more than one case, you may use `else if`:
 ![flowchart](./assets/if-else-flowchart.jpg)
 
 ```javascript
-var favoritePet = 'cat';
+const favoritePet = 'cat';
 
 if (favoritePet === 'dog') {
   console.log('Achoo!!! Im allergic to dogs.');
@@ -81,8 +81,8 @@ If `yourMoney` is less than `price`, log the message "You cannot buy a cat.  You
 ```javascript
 // Put these lines into your `lecture-practice.js` file.
 
-  var yourMoney = 50;
-  var catPrice = 100;
+  const yourMoney = 50;
+  const catPrice = 100;
 
   // YOUR CODE HERE
 ```
@@ -96,11 +96,11 @@ JavaScript has a ternary operator for conditional expressions. You can think abo
 `(condition) ? ifTrue : ifFalse`
 
 ```javascript
-var age = 12;
+const age = 12;
 
-var allowed = (age > 18) ? 'yes' : 'no';
+const allowed = (age > 18) ? 'yes' : 'no';
 
-allowed;
+console.log('allowed');
 //=> "no"
 ```
 
@@ -109,7 +109,7 @@ allowed;
 The switch statement can be used for multiple branches based on `===` equality:
 
 ```javascript
-var food = 'apple';
+const food = 'apple';
 
 switch(food) {
   case 'pear':
@@ -143,33 +143,34 @@ Use a `switch` statement to inform us if some number `n` is prime.
 
 (of course you should interpolate `n` in your messages)
 
-### Using objects for assignment
+## Using objects for assignment
 
 Let's assume we are given a Greek God's Greek name and we would like to determine the Roman name
 ```javascript
-var greekName = 'zeus';
+const greekName = 'zeus';
+let romanName;
 
 switch(greekName) {
   case 'hermes':
-    var romanName = 'mercury';
+    romanName = 'mercury';
     break;
   case 'aphrodite':
-    var romanName = 'venus';
+    romanName = 'venus';
     break;
   case 'ares':
-    var romanName = 'mars';
+    romanName = 'mars';
     break;
   case 'zeus':
-    var romanName = 'jupiter';
+    romanName = 'jupiter';
     break;
   case 'cronos':
-    var romanName = 'saturn';
+    romanName = 'saturn';
     break;
   case 'poseidon':
-    var romanName = 'neptune';
+    romanName = 'neptune';
     break;
   case 'hades':
-    var romanName = 'pluto';
+    romanName = 'pluto';
     break;
 }
 ```
@@ -177,9 +178,9 @@ switch(greekName) {
 This works but is a little verbose.  How can we accomplish the same thing with an object?
 
 ```javascript
-var greekName = 'zeus';
+const greekName = 'zeus';
 
-var greekToRoman = {
+const greekToRoman = {
   hermes: 'mercury',
   aphrodite: 'venus',
   ares: 'mars',
@@ -189,12 +190,11 @@ var greekToRoman = {
   hades: 'pluto'
 };
 
-var romanName = greekToRoman[greekName];
+const romanName = greekToRoman[greekName];
 ```
 
-Sleek. Sexy. Concise.
 
-## Iteration
+# Iteration
 
 ### [`while`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/while) loops
 
@@ -202,8 +202,8 @@ Sleek. Sexy. Concise.
 **WARNING** if your `while` loop never evaluates to falsy you may be stuck in an infinite loop!
 
 ```javascript
-var animal;
-var array = ['dog', 'cat', 'ferret', 'zebra'];
+let animal;
+const array = ['dog', 'cat', 'ferret', 'zebra'];
 
 while (array.length > 0) {
   animal = array.pop();
@@ -214,8 +214,8 @@ while (array.length > 0) {
 You can also `break` to exit the loop before the condition is met.
 
 ```javascript
-var animal;
-var array = ['dog', 'cat', 'ferret', 'zebra'];
+let animal;
+const array = ['dog', 'cat', 'ferret', 'zebra'];
 
 while (array.length > 0) {
   animal = array.shift();
@@ -233,14 +233,14 @@ Similarly, we can use [`continue`](https://developer.mozilla.org/en-US/docs/Web/
 ### [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for) loops
 
 `for` loops contain 4 components:
-* _initialization_ (e.g. `var i = 0;`)
+* _initialization_ (e.g. `let i = 0;`)
 * _test condition_ (e.g. `i < 10;`)
 * _final expression_ or _incrementor_ (e.g. `i++`)
 * _block_ (e.g. `console.log(i)`)
 
 ```javascript
 // start at i = 0; continue while i < 10; add 1 to i after each iteration
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
   // do more stuff
 }
@@ -250,7 +250,7 @@ What is the final value of `i`?
 
 You can think of the above as short-hand for
 ```javascript
-var i = 0;
+let i = 0;
 while(i < 10) {
   console.log(i);
   // do more stuff
@@ -262,8 +262,8 @@ while(i < 10) {
 We can use `for` loops to iterate over an array
 
 ```javascript
-var people = ['homer', 'marge', 'maggie', 'bart', 'lisa'];
-var person;
+const people = ['homer', 'marge', 'maggie', 'bart', 'lisa'];
+let person;
 
 for (var i = 0; i < people.length; i++) {
   person = people[i];
