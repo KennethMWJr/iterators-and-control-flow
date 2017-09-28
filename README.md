@@ -24,6 +24,17 @@ competencies: Programming
 - Be comfortable with objects and getting values
 - Understand the concepts of truthy/falsy
 
+### Before we start!
+
+You'll see `let` and `const` in here quite a bit instead of `var`. `let` and `const` also let you declare variables. For now, all you need to know is:
+
+- You use `let` to declare a variable that you know you will change later.
+- You use `const` to declare a variable that will be assigned to the same value throughout your code.
+
+(They also have something to do with something called _scope_, which we'll get into in more detail later.)
+
+When declaring a variable, you should default to `const`. If you realize later that you need to change it, it's easy to change it to `let`.
+
 # Conditional Statements
 
 ## if...else statement
