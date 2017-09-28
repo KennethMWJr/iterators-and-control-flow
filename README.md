@@ -79,6 +79,8 @@ if (favoritePet === 'dog') {
 //=> Yeah!! Cats are the best.
 ```
 
+When you're comparing variables to values, make sure you're using `==` or `===` -- not `=`. If you use `=`, you're reassigning the variable, instead of checking it for equality.
+
 ### 🚀 Independent Practice!!
 
 Touch a new javascript file -- `lecture-practice.js` -- and work in that. Remember, you can use the Node repl to run the file: `node lecture-practice.js`.
