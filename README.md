@@ -276,11 +276,9 @@ We can use `for` loops to iterate over an array
 
 ```javascript
 const people = ['homer', 'marge', 'maggie', 'bart', 'lisa'];
-let person;
 
 for (var i = 0; i < people.length; i++) {
-  person = people[i];
-  console.log(`hello, ${person}!`);
+  console.log(`hello, ${people[i]}!`);
 }
 ```
 
