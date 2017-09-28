@@ -19,7 +19,7 @@ competencies: Programming
 - Compare the use-cases of `for` and `while`-loops
 
 ### Preparation
-*Before this lesson, students should already be able to:*
+*Before this lesson, students should already:*
 - Be comfortable with arrays and indexing
 - Be comfortable with objects and getting values
 - Understand the concepts of truthy/falsy
@@ -148,11 +148,11 @@ The default clause is optional.
 ### 🚀 Independent Practice!!
 
 Use a `switch` statement to inform us if some number `n` is prime.
-* If it's 1, log the message '1 is actually not prime!'
-* If it's 2, log the message '2 is the smallest prime!'
-* If it's 3, 5, or 7, log the message: '`n` is prime!'
-* If it's 4, 6, 8, or 9, log the message: '`n` is not prime :('
-* Otherwise, log the message "idk if `n` is prime. google it, ask yourself, ask your friend."
+- If it's 1, log the message '1 is actually not prime!'
+- If it's 2, log the message '2 is the smallest prime!'
+- If it's 3, 5, or 7, log the message: '`n` is prime!'
+- If it's 4, 6, 8, or 9, log the message: '`n` is not prime :('
+- Otherwise, log the message "idk if `n` is prime. google it, ask yourself, ask your friend."
 
 (of course you should interpolate `n` in your messages)
 
@@ -246,10 +246,10 @@ Similarly, we can use [`continue`](https://developer.mozilla.org/en-US/docs/Web/
 ### [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for) loops
 
 `for` loops contain 4 components:
-* _initialization_ (e.g. `let i = 0;`)
-* _test condition_ (e.g. `i < 10;`)
-* _final expression_ or _incrementor_ (e.g. `i++`)
-* _block_ (e.g. `console.log(i)`)
+- _initialization_ (e.g. `let i = 0;`)
+- _test condition_ (e.g. `i < 10;`)
+- _final expression_ or _incrementor_ (e.g. `i++`)
+- _block_ (e.g. `console.log(i)`)
 
 ```javascript
 // start at i = 0; continue while i < 10; add 1 to i after each iteration
