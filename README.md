@@ -113,7 +113,7 @@ const age = 12;
 
 const allowed = (age > 18) ? 'yes' : 'no';
 
-console.log('allowed');
+console.log(allowed);
 //=> "no"
 ```
 
