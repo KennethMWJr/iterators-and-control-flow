@@ -20,20 +20,20 @@ competencies: Programming
 
 ### Preparation
 *Before this lesson, students should already:*
-- Be comfortable with arrays and indexing
-- Be comfortable with objects and getting values
 - Understand the concepts of truthy/falsy
 
 ### Before we start!
 
 You'll see `let` and `const` in here quite a bit instead of `var`. `let` and `const` also let you declare variables. For now, all you need to know is:
 
-- You use `let` to declare a variable that you know you will change later.
-- You use `const` to declare a variable that will be assigned to the same value throughout your code.
+- You use `let` to declare a variable that you know you will reassign later.
+- You use `const` to declare a variable that will never be re-assigned.
 
-(They also have something to do with something called _scope_, which we'll get into in more detail later.)
+(They also have something to do with something called _scope_, which we'll get into in more detail when we talk about functions.)
 
 When declaring a variable, you should default to `const`. If you realize later that you need to change it, it's easy to change it to `let`.
+
+> Why would we prefer `let` to `const`?
 
 # Conditional Statements
 
@@ -50,7 +50,7 @@ if (/* whatever's in here is true */) {
 ... means run the `code` block if `expr` is truthy
 
 ```javascript
-if (true) { 
+if (true) {
   console.log('Hello')
 }
 
@@ -79,11 +79,11 @@ if (favoritePet === 'dog') {
 //=> Yeah!! Cats are the best.
 ```
 
-When you're comparing variables to values, make sure you're using `==` or `===` -- not `=`. If you use `=`, you're reassigning the variable, instead of checking it for equality.
+When you're comparing variables to values, make sure you're using  `===` -- not `=`. If you use `=`, you're reassigning the variable, instead of checking it for equality.
 
 ### 🚀 Independent Practice!!
 
-Touch a new javascript file -- `lecture-practice.js` -- and work in that. Remember, you can use the Node repl to run the file: `node lecture-practice.js`.
+Touch a new javascript file -- `lecture-practice.js` -- and work in that. Remember, you can use Node to run the file: `node lecture-practice.js`.
 
 Let's see if you have enough money to buy a cat.
 
@@ -104,16 +104,30 @@ Play with the numbers above to make sure your code works!
 
 ### Ternary Operator
 
-JavaScript has a ternary operator for conditional expressions. You can think about the ternary operator as a concise "if-else in one line":
-
 `(condition) ? ifTrue : ifFalse`
 
+JavaScript has a ternary operator for conditional expressions. Where an `if ... else` **statement** conditionaly runs code, a ternary is used to make an **expression** which returns a value conditionally. Consider the difference when distinguishing between a statement and an expression:
+
 ```javascript
-const age = 12;
+const age = 12
 
-const allowed = (age > 18) ? 'yes' : 'no';
+let allowed
 
-console.log(allowed);
+if (age > 18) {
+  allowed = 'yes'
+} else {
+  allowed = 'no'
+}
+
+console.log(allowed)
+```
+
+```javascript
+const age = 12
+
+const allowed = (age > 18) ? 'yes' : 'no'
+
+console.log(allowed)
 //=> "no"
 ```
 
@@ -143,7 +157,7 @@ switch(food) {
 
 In this case the `switch` statement compares `food` to each of the cases (`pear` and `apple`), and evaluates the expressions beneath them if there is a match. (Using `===` to evaluate equality)
 
-The default clause is optional.
+The default clause is technically optional but in most cases it is good practice to include one.
 
 ### 🚀 Independent Practice!!
 
@@ -156,57 +170,6 @@ Use a `switch` statement to inform us if some number `n` is prime.
 
 (of course you should interpolate `n` in your messages)
 
-## Using objects for assignment
-
-Let's assume we are given a Greek God's Greek name and we would like to determine the Roman name
-```javascript
-const greekName = 'zeus';
-let romanName;
-
-switch(greekName) {
-  case 'hermes':
-    romanName = 'mercury';
-    break;
-  case 'aphrodite':
-    romanName = 'venus';
-    break;
-  case 'ares':
-    romanName = 'mars';
-    break;
-  case 'zeus':
-    romanName = 'jupiter';
-    break;
-  case 'cronos':
-    romanName = 'saturn';
-    break;
-  case 'poseidon':
-    romanName = 'neptune';
-    break;
-  case 'hades':
-    romanName = 'pluto';
-    break;
-}
-```
-
-This works but is a little verbose.  How can we accomplish the same thing with an object?
-
-```javascript
-const greekName = 'zeus';
-
-const greekToRoman = {
-  hermes: 'mercury',
-  aphrodite: 'venus',
-  ares: 'mars',
-  zeus: 'jupiter',
-  cronos: 'saturn',
-  poseidon: 'neptune',
-  hades: 'pluto'
-};
-
-const romanName = greekToRoman[greekName];
-```
-
-
 # Iteration
 
 ### [`while`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/while) loops
@@ -215,33 +178,29 @@ const romanName = greekToRoman[greekName];
 **WARNING** if your `while` loop never evaluates to falsy you may be stuck in an infinite loop!
 
 ```javascript
-let animal;
-const array = ['dog', 'cat', 'ferret', 'zebra'];
-
-while (array.length > 0) {
-  animal = array.pop();
-  console.log(`I have a ${animal}`)
+let n = 0
+while (n < 50) {
+  console.log(`${n} is ${n % 2 ? 'odd' : 'even'}`)
+  n++
 }
 ```
 
 You can also `break` to exit the loop before the condition is met.
 
 ```javascript
-let animal;
-const array = ['dog', 'cat', 'ferret', 'zebra'];
-
-while (array.length > 0) {
-  animal = array.shift();
-  console.log(`I have a ${animal}`);
-
-  if(animal === 'ferret') {
-    console.log('ew ferrets are gross');
-    break;
+let n = 0
+while (n < 50) {
+  console.log(`${n} is ${n % 2 ? 'odd' : 'even'}`)
+  if (n === 42) {
+    break
   }
+  n++
 }
 ```
 
 Similarly, we can use [`continue`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue) to "skip" the rest of the current iteration and move to the next.
+
+> How would we skip all values divisible by 7?
 
 ### [`for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for) loops
 
@@ -250,6 +209,8 @@ Similarly, we can use [`continue`](https://developer.mozilla.org/en-US/docs/Web/
 - _test condition_ (e.g. `i < 10;`)
 - _final expression_ or _incrementor_ (e.g. `i++`)
 - _block_ (e.g. `console.log(i)`)
+
+Notice these components all exist in our `while` example above. A `for` loop is just a specialized while loop since the pattern is so common.
 
 ```javascript
 // start at i = 0; continue while i < 10; add 1 to i after each iteration
@@ -261,7 +222,6 @@ for (let i = 0; i < 10; i++) {
 What will we see when running the above snippet?
 What is the final value of `i`?
 
-You can think of the above as short-hand for
 ```javascript
 let i = 0;
 while(i < 10) {
@@ -269,16 +229,6 @@ while(i < 10) {
   // do more stuff
 
   i++;
-}
-```
-
-We can use `for` loops to iterate over an array
-
-```javascript
-const people = ['homer', 'marge', 'maggie', 'bart', 'lisa'];
-
-for (var i = 0; i < people.length; i++) {
-  console.log(`hello, ${people[i]}!`);
 }
 ```
 
@@ -290,12 +240,9 @@ Let's expand our `switch` statement from above that checks for primes.  Instead 
 
 ## 🚀 LAB TIME!!
 
-Fork and clone [this repo](https://git.generalassemb.ly/wdi-nyc-thundercats/LAB_U01_D04_Iterators-Control-Flow) and follow the instructions!
-
-
+Working with a partner we will fork and clone [this repo](https://git.generalassemb.ly/wdi-nyc-goat/LAB_U01_D02_choose-your-own-adventure)!
 
 ## Conclusion (5 mins)
 - When would use conditionals? What are the different ways to tackle conditional logic?
 - What can we use `for` and `while` loops to accomplish?
 - How do we choose between using a `for` or a `while` loop?
-
