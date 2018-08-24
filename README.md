@@ -240,7 +240,7 @@ Let's expand our `switch` statement from above that checks for primes.  Instead 
 
 ## 🚀 LAB TIME!!
 
-Working with a partner we will fork and clone [this repo](https://git.generalassemb.ly/wdi-nyc-goat/LAB_U01_D02_choose-your-own-adventure)!
+Working with a partner we will fork and clone [this repo](https://git.generalassemb.ly/wdi-nyc-arcadia/LAB_U01_D02_choose-your-own-adventure)!
 
 ## Conclusion (5 mins)
 - When would use conditionals? What are the different ways to tackle conditional logic?
